@@ -31,6 +31,6 @@ Algorithm efficiency is a broad topic in Computer Science and listed below are a
 - First we identify the "pivot" as the last element in the array
 - Then we look at the lowest index which is the wall
 - And the left most element to the wall which will be the current element
-- We start with the current element, right next tot he wall and compare it to the pivot
+- We start with the current element, right next to the wall and compare it to the pivot
   - if it's larger it stays on that side of the wall
   - if it's smaller it switches with element right next to the wall and the wall moves
