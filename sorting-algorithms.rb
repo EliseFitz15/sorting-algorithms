@@ -1,7 +1,9 @@
 require 'benchmark'
+require 'pry'
 
 def selection_sort(to_sort)
   for index in 0..(to_sort.length - 2)
+    binding.pry
     # select the first element as the temporary minimum
     index_of_minimum = index
 
@@ -53,23 +55,26 @@ def bubble_sort(to_sort)
   return to_sort
 end
 
-puts "Small Set"
-numbers = (1..100).to_a.shuffle!
-Benchmark.bm(15) do |r|
-  r.report("Selection Sort") { selection_sort(numbers) }
-  r.report("Insertion Sort") { insertion_sort(numbers) }
-  r.report("Bubble Sort") { bubble_sort(numbers) }
-  r.report("Ruby Sort") { numbers.sort! }
-
-end
-
-puts; puts "---------"; puts
-
-puts "Large Set"
-numbers = (1..10000).to_a.shuffle!
-Benchmark.bm(15) do |r|
-  r.report("Selection Sort") { selection_sort(numbers) }
-  r.report("Insertion Sort") { insertion_sort(numbers) }
-  r.report("Bubble Sort") { bubble_sort(numbers) }
-  r.report("Ruby Sort") { numbers.sort! }
-end
+array = ["a","f","c","b","e","d","g"]
+selection_sort(array)
+#
+# puts "Small Set"
+# numbers = (1..100).to_a.shuffle!
+# Benchmark.bm(15) do |r|
+#   r.report("Selection Sort") { selection_sort(numbers) }
+#   r.report("Insertion Sort") { insertion_sort(numbers) }
+#   r.report("Bubble Sort") { bubble_sort(numbers) }
+#   r.report("Ruby Sort") { numbers.sort! }
+#
+# end
+#
+# puts; puts "---------"; puts
+#
+# puts "Large Set"
+# numbers = (1..10000).to_a.shuffle!
+# Benchmark.bm(15) do |r|
+#   r.report("Selection Sort") { selection_sort(numbers) }
+#   r.report("Insertion Sort") { insertion_sort(numbers) }
+#   r.report("Bubble Sort") { bubble_sort(numbers) }
+#   r.report("Ruby Sort") { numbers.sort! }
+# end
